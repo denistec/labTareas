@@ -12,13 +12,23 @@ document.getElementById("boton-agregar").addEventListener("click", function() {
             lista.appendChild(li);
             input.value = "";
             mensajeError.textContent = "";
+            //crear botó de eliminar para cada tarea
+            const btnEliminar = document.createElement("button");
+            btnEliminar.textContent = "Eliminar Tarea";
+            btnEliminar.type = "button";
+            btnEliminar.classList.add("boton-eliminar");
+            //agregar evento para eliminar tarea
+            btnEliminar.addEventListener("click", function {
+                li.remove()
+            });
+
             
         } else {
         mensajeError.textContent = "Por favor ingresa una tarea"
     }
 });
 
-// //ELIMINAR TAREA
-// document.getElementById(boton-eliminar).addEventListener("click", function{
-
-// })
+//ELIMINAR TAREA
+document.getElementById(boton-eliminar).addEventListener("click", function{
+    
+})
