@@ -1,34 +1,23 @@
 
+const input = document.getElementById("ingreso-texto");
+const lista = document.getElementById("lista-tareas");
+const crearBotonEliminar = document.createElement("button");
 
 //AGREGAR TAREA
-document.getElementById("boton-agregar").addEventListener("click", function() {
-    const input = document.getElementById("ingreso-texto");
+const botonAgregar = document.getElementById("boton-agregar")
+botonAgregar.addEventListener("click", function(){
+    const itemNuevo = document.createElement("li")
     const texto = input.value.trim();
-    const mensajeError = document.getElementById("mensaje-error")
-    const lista = document.querySelector(".lista-tareas")
-        if (texto) {
-            const li = document.createElement("li");
-            li.textContent = texto;
-            lista.appendChild(li);
-            input.value = "";
-            mensajeError.textContent = "";
-            //crear botó de eliminar para cada tarea
-            const btnEliminar = document.createElement("button");
-            btnEliminar.textContent = "Eliminar Tarea";
-            btnEliminar.type = "button";
-            btnEliminar.classList.add("boton-eliminar");
-            //agregar evento para eliminar tarea
-            btnEliminar.addEventListener("click", function {
-                li.remove()
-            });
-
-            
-        } else {
-        mensajeError.textContent = "Por favor ingresa una tarea"
-    }
+    itemNuevo.textContent = texto;
+    lista.appendChild(itemNuevo)
+    //crear el boton
+    crearBotonEliminar.type = "button";
+    crearBotonEliminar.textContent = "eliminar tarea";
+    itemNuevo.appendChild(crearBotonEliminar) // agregar botón dentro del li
+});
+//ELIMINAR TAREA
+    crearBotonEliminar.addEventListener("click", function(){
+        const li = this.parentElement; //Obtener el <li> que contiene el botón
+        li.remove();
 });
 
-//ELIMINAR TAREA
-document.getElementById(boton-eliminar).addEventListener("click", function{
-    
-})
